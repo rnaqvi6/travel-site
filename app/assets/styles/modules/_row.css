@@ -5,9 +5,17 @@
 &--gutters {
   padding-right: -65px;
 }
+&--gutters-large {
+  padding-right: -100px;
+}
 
 &--gutters > div {
   padding-right: 65px;
+
+}
+
+&--gutters-large > div {
+  padding-right: 100px;
 
 }
 
@@ -32,7 +40,7 @@
 
       width: 50%;
       float: left;
-      
+
     }
 
   }
