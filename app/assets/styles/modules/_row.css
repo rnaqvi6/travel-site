@@ -1,47 +1,62 @@
 
 .row {
+
 @mixin clearfix;
 
 &--gutters {
-  padding-right: -65px;
-}
+  margin-right: -65px;
+    }
 &--gutters-large {
-  padding-right: -100px;
-}
+  margin-right: -100px;
+    }
 
 &--gutters > div {
   padding-right: 65px;
-
-}
-
+    }
 &--gutters-large > div {
   padding-right: 100px;
-
 }
+
+&--gutters > div {
+  padding-right: 60px;
+    }
+&--gutters-large > div {
+  padding-right: 80px;
+}
+
+
 
 @mixin atMedium {
 
-
+&__medium-4-1 {
+      width: 33%;
+      float: left;
+      }
 &__medium-4 {
-
-  width: 37%;
-  float: left;
-
-}
-
-  &__medium-8 {
-
-    width: 63%;
-    float: left;
-
-  }
-
-    &__medium-6 {
-
+      width: 37%;
+      float: left;
+      }
+&__medium-6 {
       width: 50%;
       float: left;
+      }
+&__medium-8 {
+      width: 63%;
+      float: left;
+      }
 
+
+
+&--equal-height-at-medium {
+@mixin atMedium {
+    display: flex;
     }
+  & > div {
 
+    float:none;
+    display:flex;
   }
+}
+
+}
 }

@@ -1,4 +1,5 @@
 .wrapper{
+
   padding-left: 18px;
   padding-right: 18px;
   max-width: 1236px;
@@ -6,17 +7,10 @@
   margin-left: auto;
   margin-right: auto;
 
-
-
   &--medium {
     max-width: 976px;
   }
 
-  .wrapper {
-    padding-left: 0;
-    padding-right: 0;
-
-  }
   &--b-margin {
     margin-bottom: 1rem;
 
