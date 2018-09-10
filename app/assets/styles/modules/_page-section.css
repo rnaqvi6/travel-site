@@ -3,9 +3,8 @@
 
   @mixin atMedium {
     padding: 4.5rem 0;
-
   }
-
+  
   &--no-b-padding-until-medium {
     padding-bottom: 0;
 
@@ -25,7 +24,6 @@
   &--blue {
     background-color: $mainBlue;
     color: #FFF;
-
   }
 
   &--testimonials {

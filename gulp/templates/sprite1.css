@@ -1,9 +1,0 @@
-/* test comments */
-{{#shapes}}
-.icon--{{base}} {
-  width:{{width.outer}}px;
-  height:{{height.outer}}px;
-  backgrund-image: url('/temp/sprite/css/{{{sprite}}}');
-  backgroun-position: {{position.relative.xy}};
-}
-{{/shapes}}
