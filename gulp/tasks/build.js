@@ -18,7 +18,7 @@ gulp.task('previewDist', function() {
 });
 
 
-gulp.task('deleteDistFolder', function(){
+gulp.task('deleteDistFolder', ['icons'] , function(){
   return del("./docs");
 });
 
@@ -38,7 +38,7 @@ gulp.task('copyGeneralFiles',['deleteDistFolder'], function(){
 });
 
 
-gulp.task('optimizImages', ['deleteDistFolder','icons'], function(){
+gulp.task('optimizImages', ['deleteDistFolder'], function(){
   return gulp.src(['./app/assets/images/**/*','!./app/assets/images/icons','!./app/assets/images/icons/**/*'])
     .pipe(imagemin({
       progressive: true,
@@ -48,7 +48,11 @@ gulp.task('optimizImages', ['deleteDistFolder','icons'], function(){
     .pipe(gulp.dest("./docs/assets/images"));
 });
 
-gulp.task('usemin',['deleteDistFolder','styles','scripts'], function(){
+gulp.task('useminTrigger', ['deleteDistFolder'] , function(){
+  gulp.start("usemin");
+});
+
+gulp.task('usemin',['styles','scripts'], function(){
   return gulp.src("./app/index.html")
       .pipe(usemin({
         css: [function() {return rev()}, function() {return cssnano()}],
@@ -60,4 +64,4 @@ gulp.task('usemin',['deleteDistFolder','styles','scripts'], function(){
 
 
 
-gulp.task('build', ['deleteDistFolder','copyGeneralFiles','optimizImages','usemin']);
+gulp.task('build', ['deleteDistFolder','copyGeneralFiles','optimizImages','useminTrigger']);
